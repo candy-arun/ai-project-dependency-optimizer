@@ -1,0 +1,37 @@
+.gantt-chart-container {
+  padding: 20px;
+  border-top: 2px solid #ccc;
+  margin-top: 30px;
+  background-color: #f8fafc;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.gantt-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.task-name {
+  width: 160px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.task-bar {
+  height: 30px;
+  background-color: #60a5fa;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 13px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.task-bar.critical {
+  background-color: #ef4444;
+  font-weight: bold;
+}

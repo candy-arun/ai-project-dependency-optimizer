@@ -1,0 +1,28 @@
+# Node
+node_modules/
+client/node_modules/
+server/node_modules/
+client/build/
+server/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+*.env
+
+# Python virtualenv and caches
+.venv/
+venv/
+ml-service/.venv/
+ml-service/venv/
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# other
+*.log
