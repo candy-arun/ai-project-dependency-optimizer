@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load model
-MODEL_PATH = os.path.join("ml-service", "duration_model.pkl")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "duration_model.pkl")
 print("Looking for model at:", os.path.abspath(MODEL_PATH))
 
 try:
@@ -32,7 +32,7 @@ def predict_duration():
     try:
         predicted = model.predict([task_name])[0]
         return jsonify({
-            "duration": round(predicted, 2),  # 🔥 KEY FIX: renamed key to "duration"
+            "duration": round(float(predicted), 2),  # ensure JSON serializable
             "task_name": task_name
         })
     except Exception as e:
@@ -43,4 +43,4 @@ def health_check():
     return jsonify({"status": "healthy", "model_loaded": bool(model)})
 
 if __name__ == "__main__":
-    app.run(port=5001, debug=False, use_reloader=False)
+    app.run(host="0.0.0.0", port=5001, debug=False, use_reloader=False)
